@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<title>Welcome to Sena Kalyan Sangstha</title>
+</head>
+
+<body>
+<div class="div-body">
+	<div class="div-header">
+		<div class="hd-top">
+			<div class="hd-top-bg">
+				<div class="hd-top-right">
+					<div class="hd-top-menu">
+						<img src="images/top-menu.jpg" height="25" /> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hd-bot">
+			<div class="hd-bot-bg">
+				<div class="hd-bot-left">
+					<div class="hd-bot-left-menu">
+						<img src="images/bot-left-menu.jpg" height="27" onclick="ChangeContentPage(1);" />
+					</div>
+				</div>
+				<div class="hd-bot-right">
+					<div class="hd-bot-right-menu">
+						<img src="images/bot-right-menu.jpg" height="27" onclick="ChangeContentPage(2);" /> 
+					</div>
+				</div>
+			</div>
+			<div class="hd-logo"><img class="hd-logo-img" src="images/sks-logo.png" onclick="ChangeContentPage(0);"/></div>			
+		</div>
+	</div>
+	<div class="div-content">
+		<div class="div-cont-top"></div>
+		<div class="div-cont-bg"></div>
+		<div class="div-cont-bg1"></div>
+		<div class="div-cont-bg2"></div>
+	</div>
+</div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	setTimeout(function(){ 
+		$(".hd-logo-img").animate({
+        	width: '300px',
+			marginTop: '-150px'
+    	}, 1200);
+	}, 1);
+    setTimeout(function(){ 		
+		$(".hd-top").animate({
+        	minHeight: '65px',
+			maxHeight: '65px'
+    	}, 800);
+		$(".hd-logo-img").animate({
+        	width: '130px',
+			marginTop: '-120px'
+    	}, 800);
+		$(".hd-bot").animate({
+        	minHeight: '65px',
+			maxHeight: '65px'
+    	}, 800);		
+	}, 1500);
+	setTimeout(function(){ 
+		$(".hd-top-bg").animate({
+        	width: '100%'
+    	}, 800);
+		$(".hd-bot-bg").animate({
+        	width: '100%'
+    	}, 800);		
+	}, 2500);
+	setTimeout(function(){ 
+		$(".div-cont-top").animate({
+			minHeight: '0px'
+    	}, 800);		
+	}, 3500);
+} );
+
+function ChangeContentPage(id){
+	setTimeout(function(){ 
+		$(".div-cont-top").animate({
+			minHeight: '800px'
+    	}, 800);		
+	}, 1);
+	setTimeout(function(){ 
+		$(".div-cont-bg").hide();
+		$(".div-cont-bg1").hide();
+		$(".div-cont-bg2").hide();
+		if(id==0){
+			$(".div-cont-bg").show();
+		}else if(id==1){
+			$(".div-cont-bg1").show();
+		}else if(id==2){
+			$(".div-cont-bg2").show();
+		}
+	}, 1000);
+	setTimeout(function(){ 
+		$(".div-cont-top").animate({
+			minHeight: '0px'
+		}, 800);		
+	}, 1000);	
+}
+</script>
